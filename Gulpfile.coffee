@@ -77,7 +77,7 @@ gulp.task 'js', ['bower', 'modernizr'], ->
       b = browserify(entries: filename, debug: true, extensions: ['.coffee'])
       b.bundle()
     .pipe(sourcemaps.init(loadMaps: true))
-    .pipe(uglify())
+    .pipe(uglify(mangle: process.env.NODE_ENV == 'production'))
     .pipe(rename(extname: '.js'))
     .pipe(fixNames)
     .pipe(sourcemaps.write('maps', includeContent: false, sourceRoot: '/_src'))
