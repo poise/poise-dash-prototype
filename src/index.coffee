@@ -28,7 +28,7 @@ if process.env.server_ENV == 'development'
   app.use('/_src', express.static(__dirname + '/../'))
 
 app.get '/', (req, res) ->
-  res.header('Cache-Contro', 'max-age=0, must-revalidate, no-cache, no-store')
+  res.header('Cache-Control', 'max-age=0, must-revalidate, no-cache, no-store')
   res.render('index')
 
 port = process.env.PORT or 3000
