@@ -79,7 +79,7 @@ gulp.task 'js', ['bower', 'modernizr'], ->
     .pipe(sourcemaps.init(loadMaps: true))
     .pipe(uglify(mangle: process.env.NODE_ENV == 'production'))
     .pipe(rename(extname: '.js'))
-    .pipe(fixNames)
+    # .pipe(fixNames)
     .pipe(sourcemaps.write('maps', includeContent: false, sourceRoot: '/_src'))
     .pipe(gulp.dest('_static/js/'))
 
