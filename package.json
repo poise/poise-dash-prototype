@@ -4,11 +4,16 @@
   "description": "A project dashboard for Poise.",
   "main": "index.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "exit 1",
+    "postinstall": "bower install && gulp build"
   },
   "author": "Noah Kantrowit <noah@coderanger.net>",
   "license": "Apache 2.0",
   "private": true,
+  "engines": {
+    "node": "0.12.x"
+  },
   "dependencies": {
     "coffee-script": "^1.9.1",
     "express": "^4.12.3",
