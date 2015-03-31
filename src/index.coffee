@@ -30,4 +30,4 @@ if process.env.server_ENV == 'development'
 app.get '/', (req, res) ->
   res.render('index')
 
-app.listen(3000)
+app.listen(process.env.PORT or 3000)
