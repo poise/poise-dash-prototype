@@ -40,9 +40,21 @@
     "transform": ["browserify-shim", "coffeeify"]
   },
   "browser": {
-    "d3": "./bower_components/d3/d3.js"
+    "d3": "./bower_components/d3/d3.js",
+    "ember": "./bower_components/ember/ember.js",
+    "handlebars": "./bower_components/handlebars/handlebars.js",
+    "jquery": "./bower_components/jquery/dist/jquery.js"
   },
   "browserify-shim": {
-    "d3": "d3"
+    "d3": "d3",
+    "jquery": "$",
+    "handlebars": "Handlebars",
+    "ember": {
+      "exports": "Ember",
+      "depends": [
+        "jquery:jQuery",
+        "handlebars:Handlebars"
+      ]
+    }
   }
 }

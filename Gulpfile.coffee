@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+fs = require('fs')
+path = require('path')
+Stream = require('stream')
+
 browserify = require('browserify')
 gulp = require('gulp')
 bower = require('gulp-bower')
@@ -24,6 +28,25 @@ rename = require('gulp-rename')
 sourcemaps = require('gulp-sourcemaps')
 uglify = require('gulp-uglify')
 transform = require('vinyl-transform')
+
+
+fixNames = new Stream.Transform({objectMode: true})
+fixNames._transform = (file, ..., cb) ->
+  checkFile = (sourcePath) ->
+    options = [
+      sourcePath,
+      path.join(__dirname, 'app', 'js', sourcePath),
+    ]
+    for p in options
+      try
+        fs.statSync(p)
+        return path.relative(__dirname, p)
+      catch e
+        null
+  if file.sourceMap
+    file.sourceMap.file = checkFile(file.sourceMap.file)
+    file.sourceMap.sources = file.sourceMap.sources.map(checkFile)
+  cb(null, file)
 
 
 gulp.task 'bower', ->
@@ -54,12 +77,20 @@ gulp.task 'js', ['bower', 'modernizr'], ->
     .pipe(sourcemaps.init(loadMaps: true))
     .pipe(uglify())
     .pipe(rename(extname: '.js'))
+    .pipe(fixNames)
     .pipe(sourcemaps.write('maps', includeContent: false, sourceRoot: '/_src'))
     .pipe(gulp.dest('_static/js/'))
 
-gulp.task 'serve', ->
+gulp.task 'build', ['css', 'fonts', 'js']
+
+gulp.task 'watch', ['build'], ->
+  gulp.watch('app/css/**/*.less', ['css'])
+  gulp.watch('app/js/**/*.coffee', ['js'])
+
+gulp.task 'serve', ['watch'], ->
   server = gls.new('index.js')
   server.start()
-  gulp.watch(['_static/**/*.css', '_static/**/*.js'], server.notify)
+  gulp.watch(['_static/**/*.css', '_static/**/*.js', 'views/**/*.hbs'], server.notify)
   gulp.watch('src/**/*.coffee', server.start)
 
+gulp.task 'default', ['serve']
