@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "exit 1",
-    "postinstall": "bower install && gulp build"
+    "postinstall": "node_modules/.bin/bower install && node_modules/.bin/gulp build"
   },
   "author": "Noah Kantrowit <noah@coderanger.net>",
   "license": "Apache 2.0",
@@ -23,6 +23,7 @@
     "travis-ci": "^2.0.3"
   },
   "devDependencies": {
+    "bower": "^1.4.0",
     "browserify": "^9.0.3",
     "browserify-shim": "^3.8.3",
     "coffeeify": "^1.0.0",
@@ -42,7 +43,10 @@
     "vinyl-transform": "^1.0.0"
   },
   "browserify": {
-    "transform": ["browserify-shim", "coffeeify"]
+    "transform": [
+      "browserify-shim",
+      "coffeeify"
+    ]
   },
   "browser": {
     "d3": "./bower_components/d3/d3.js",
