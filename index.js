@@ -14,5 +14,6 @@
 // limitations under the License.
 //
 
+console.log('Starting poise-dash');
 require('coffee-script/register');
 require('./src/index');
