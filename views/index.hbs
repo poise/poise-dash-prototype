@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Poise Dashboard</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/js/modernizr.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-container container">
+      <span class="logo">Poise Dashboard</span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="headers row">
+      <div class="header-name col-4">&nbsp;</div>
+      <div class="header-travis col-2">Travis CI</div>
+      <div class="header-codecov col-2">Coverage</div>
+      <div class="header-codeclimate col-2">Code Climate</div>
+      <div class="header-gemnasium col-2 right">Dependencies</div>
+    </div>
+
+    <div id="project-name" class="project row">
+      <div class="project-name col-4">
+        <span class="name-label">Project name</span>
+        <span class="name-details">
+          <i class="fa fa-github"></i>
+          <span class="name-rev">6706d79</span>
+          <i class="fa fa-clock-o"></i>
+          <span class="name-age">17 hours ago</span>
+        </span>
+      </div>
+      <div class="project-travis col-2">
+        <div class="status-good">
+          <span class="status-label">Passing</span>
+          <svg class="status-graph">
+            <rect class="graph-nil" x="0", y="10" width="58", height="1" />
+            <!-- <rect class="graph-bar graph-good" x="0" y="0" width="4" height="10" />
+            <rect class="graph-bar graph-good" x="6" y="0" width="4" height="10" />
+            <rect class="graph-bar graph-nil" x="12" y="11" width="4" height="10" />
+            <rect class="graph-bar graph-bad" x="18" y="11" width="4" height="10" /> -->
+          </svg>
+        </div>
+      </div>
+      <div class="project-codecov col-2">
+        <div class="status-good">
+          <span class="status-label">98%</span>
+          <span class="status-graph"><img src="/img/line.png" /></span>
+        </div>
+      </div>
+      <div class="project-codeclimate col-2">
+        <div class="status-bad">
+          <span class="status-label">2.8</span>
+          <span class="status-graph"><img src="/img/bar2.png" /></span>
+        </div>
+      </div>
+      <div class="project-gemnasium col-2 right">
+        <div class="status-nil">
+          <span class="status-label">2</span>
+          <span class="status-graph"><img src="/img/bar.png" /></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-name2" class="project row">
+      <div class="project-name col-4">
+        <span class="name-label">Project name 2</span>
+        <span class="name-details">
+          <i class="fa fa-github"></i>
+          <span class="name-rev">d52e08c</span>
+          <i class="fa fa-clock-o"></i>
+          <span class="name-age">1 day ago</span>
+        </span>
+      </div>
+      <div class="project-travis col-2">
+        <div class="status-bad">
+          <span class="status-label">Failed</span>
+          <span class="status-graph"><img src="/img/builds.png" /></span>
+        </div>
+      </div>
+      <div class="project-codecov col-2">
+        <div class="status-good">
+          <span class="status-label">98%</span>
+          <span class="status-graph"><img src="/img/line.png" /></span>
+        </div>
+      </div>
+      <div class="project-codeclimate col-2">
+        <div class="status-bad">
+          <span class="status-label">2.8</span>
+          <span class="status-graph"><img src="/img/bar2.png" /></span>
+        </div>
+      </div>
+      <div class="project-gemnasium col-2 right">
+        <div class="status-good">
+          <span class="status-label">Up to date</span>
+          <span class="status-graph"><img src="/img/bar.png" /></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="/static/js/main.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+@import "base/less/style";
+@import "font-awesome/less/font-awesome";
+
+body {
+  background-color: #F6F6F6;
+}
+
+.navbar {
+  background-color: #000;
+  color: #FFF;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.headers {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.project {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.project > * {
+  height: 100%;
+}
+
+.name-label, .name-details {
+  display: block;
+}
+
+.name-label, .status-label {
+  font-size: 24px;
+  line-height: 60px;
+}
+
+.name-label {
+  color: #000;
+}
+
+.name-details {
+  margin-top: -16px;
+  color: #777;
+  font-size: 12px;
+}
+
+.name-rev {
+  font-family: monospace;
+}
+
+.name-details .fa-clock-o {
+  margin-left: 10px;
+}
+
+.status-good, .status-bad, .status-nil {
+  height: 100%;
+  text-align: center;
+}
+
+.status-label, .status-graph {
+  display: block;
+}
+
+.status-graph {
+  font-size: 0;
+  line-height: 25px;
+  height: 25px;
+}
+
+.status-good {
+  background-color: #B3FFC3;
+}
+
+.status-bad {
+  background-color: #FFB3B3;
+}
+
+.status-nil {
+  background-color: #B3B3B3;
+}
+
+.graph-good {
+  fill: #0A0;
+}
+
+.graph-bad {
+  fill: #E00;
+}
+
+.graph-nil {
+  fill: #979797;
+}

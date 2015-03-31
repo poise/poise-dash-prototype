@@ -1,0 +1,24 @@
+{
+  "name": "poise-dash",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Noah Kantrowitz <noah@coderanger.net>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "base": "~2.0.2",
+    "d3": "~3.5.5",
+    "font-awesome": "~4.3.0",
+    "ember": "~1.11.0",
+    "handlebars": "~3.0.0"
+  }
+}
