@@ -8,11 +8,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="shortcut icon" href="/img/favicon.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-
+  {{> favicons}}
+  <link rel="canonical" href="https://dash.poise.io/">
   <link rel="stylesheet" href="/static/css/style.css">
   <script src="/static/js/modernizr.js"></script>
 </head>
@@ -46,10 +43,6 @@
           <span class="status-label">Passing</span>
           <svg class="status-graph">
             <rect class="graph-nil" x="0", y="10" width="58", height="1" />
-            <!-- <rect class="graph-bar graph-good" x="0" y="0" width="4" height="10" />
-            <rect class="graph-bar graph-good" x="6" y="0" width="4" height="10" />
-            <rect class="graph-bar graph-nil" x="12" y="11" width="4" height="10" />
-            <rect class="graph-bar graph-bad" x="18" y="11" width="4" height="10" /> -->
           </svg>
         </div>
       </div>

@@ -21,10 +21,12 @@ Stream = require('stream')
 browserify = require('browserify')
 gulp = require('gulp')
 bower = require('gulp-bower')
+favicons = require('gulp-favicons')
 less = require('gulp-less')
 gls = require('gulp-live-server')
 modernizr = require('gulp-modernizr')
 rename = require('gulp-rename')
+replace = require('gulp-replace')
 sourcemaps = require('gulp-sourcemaps')
 uglify = require('gulp-uglify')
 transform = require('vinyl-transform')
@@ -81,7 +83,23 @@ gulp.task 'js', ['bower', 'modernizr'], ->
     .pipe(sourcemaps.write('maps', includeContent: false, sourceRoot: '/_src'))
     .pipe(gulp.dest('_static/js/'))
 
-gulp.task 'build', ['css', 'fonts', 'js']
+gulp.task 'favicons', ->
+  # Fast path for the normal case that we already have favicons.
+  return if fs.existsSync(path.join(__dirname, '_static', 'favicons.hbs'))
+  gulp.src('views/index.hbs')
+    .pipe(favicons(files: {
+      src: 'app/img/favicon.png',
+      dest: '../_static/img',
+      html: '_static/favicons.hbs',
+    }))
+
+gulp.task 'favicons_html', ['favicons'], ->
+  gulp.src('_static/favicons.hbs')
+    .pipe(replace(/img\//g, '/static/img/'))
+    .pipe(replace(/\n+/g, '\n'))
+    .pipe(gulp.dest('views/partials'))
+
+gulp.task 'build', ['css', 'fonts', 'js', 'favicons_html']
 
 gulp.task 'watch', ['build'], ->
   gulp.watch('app/css/**/*.less', ['css'])

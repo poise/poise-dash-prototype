@@ -1,3 +1,4 @@
 _static/
 bower_components/
 node_modules/
+views/partials/favicons.hbs
