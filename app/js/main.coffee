@@ -78,7 +78,7 @@ coverageGraph = (elm, data) ->
           .attr("fill", "url(#sparkline-gradient-" + sparklineId + ")")
 
   line = d3.svg.line()
-      .interpolate("linear")
+      .interpolate("cardinal")
       .x((d, i) -> x(i))
       .y((d) -> h - y(d))
 
