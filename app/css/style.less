@@ -5,6 +5,11 @@ body {
   background-color: #F6F6F6;
 }
 
+a {
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
 .navbar {
   background-color: #000;
   color: #FFF;
@@ -26,6 +31,7 @@ body {
 .project {
   height: 100px;
   margin-bottom: 10px;
+  a { color: inherit; }
 }
 
 .project > * {
@@ -63,6 +69,7 @@ body {
   position: relative;
   height: 100%;
   text-align: center;
+  display: block;
 }
 
 .status-label, .status-graph {
