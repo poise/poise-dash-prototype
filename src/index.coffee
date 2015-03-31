@@ -30,4 +30,5 @@ if process.env.server_ENV == 'development'
 app.get '/', (req, res) ->
   res.render('index')
 
+console.log("Poise-dash listening on istening on http://localhost:#{process.env.PORT or 3000}/")
 app.listen(process.env.PORT or 3000)
