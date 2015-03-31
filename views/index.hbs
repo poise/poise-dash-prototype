@@ -40,9 +40,11 @@
       </div>
       <div class="project-travis col-2">
         <div class="status-good">
-          <span class="status-label">Passing</span>
+          <span class="status-label">
+            <i class="fa fa-check"></i> 23
+          </span>
           <svg class="status-graph">
-            <rect class="graph-nil" x="0", y="10" width="58", height="1" />
+            <rect class="graph-line" x="0", y="10" width="58", height="1" />
           </svg>
         </div>
       </div>
@@ -55,13 +57,18 @@
       <div class="project-codeclimate col-2">
         <div class="status-bad">
           <span class="status-label">2.8</span>
-          <span class="status-graph"><img src="/img/bar2.png" /></span>
+          <svg class="status-graph">
+            <g transform="translate(0, 9)">
+            </g>
+          </svg>
         </div>
       </div>
       <div class="project-gemnasium col-2 right">
         <div class="status-nil">
           <span class="status-label">2</span>
-          <span class="status-graph"><img src="/img/bar.png" /></span>
+          <svg class="status-graph">
+            <g transform="translate(0, 9)"></g>
+          </svg>
         </div>
       </div>
     </div>
@@ -78,25 +85,31 @@
       </div>
       <div class="project-travis col-2">
         <div class="status-bad">
-          <span class="status-label">Failed</span>
-          <span class="status-graph"><img src="/img/builds.png" /></span>
+          <span class="status-label">
+            <i class="fa fa-exclamation-circle"></i> 5
+          </span>
+          <svg class="status-graph">
+            <rect class="graph-line" x="0", y="10" width="58", height="1" />
+          </svg>
         </div>
       </div>
       <div class="project-codecov col-2">
-        <div class="status-good">
-          <span class="status-label">98%</span>
+        <div class="status-bad">
+          <span class="status-label">45%</span>
           <span class="status-graph"><img src="/img/line.png" /></span>
         </div>
       </div>
       <div class="project-codeclimate col-2">
-        <div class="status-bad">
-          <span class="status-label">2.8</span>
+        <div class="status-good">
+          <span class="status-label">3.6</span>
           <span class="status-graph"><img src="/img/bar2.png" /></span>
         </div>
       </div>
       <div class="project-gemnasium col-2 right">
         <div class="status-good">
-          <span class="status-label">Up to date</span>
+          <span class="status-label">
+            <i class="fa fa-check"></i>
+          </span>
           <span class="status-graph"><img src="/img/bar.png" /></span>
         </div>
       </div>

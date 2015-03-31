@@ -60,6 +60,7 @@ body {
 }
 
 .status-good, .status-bad, .status-nil {
+  position: relative;
   height: 100%;
   text-align: center;
 }
@@ -69,9 +70,15 @@ body {
 }
 
 .status-graph {
-  font-size: 0;
-  line-height: 25px;
+  bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
   height: 25px;
+  width: 60px;
+}
+
+.project-travis .status-graph {
+  width: 58px;
 }
 
 .status-good {
@@ -86,6 +93,10 @@ body {
   background-color: #B3B3B3;
 }
 
+.graph-line, .project-travis .graph-nil {
+  fill: #979797;
+}
+
 .graph-good {
   fill: #0A0;
 }
@@ -95,5 +106,5 @@ body {
 }
 
 .graph-nil {
-  fill: #979797;
+  fill: #FFEE00;
 }
